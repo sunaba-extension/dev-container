@@ -77,4 +77,8 @@
     initExtraBeforeCompInit = ''
         '';
   };
+
+  programs.vim = {
+    enable = true;
+  };
 }
