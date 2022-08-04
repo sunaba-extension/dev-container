@@ -48,26 +48,9 @@
       theme = "";
     };
 
-    plugins = [
-      {
-        name = "you-should-use";
-        src = pkgs.fetchFromGitHub {
-          owner = "MichaelAquilina";
-          repo = "zsh-you-should-use";
-          rev = "1.7.3";
-          sha256 = "/uVFyplnlg9mETMi7myIndO6IG7Wr9M7xDFfY1pG5Lc=";
-        };
-      }
-    ];
+    plugins = [ ];
 
-    shellAliases = {
-      ".." = "cd ..";
-      "..." = "cd ../..";
-      cat = "bat --paging=never";
-      grep = "rg";
-      ll = "ls -la";
-      man = "batman";
-    };
+    shellAliases = { };
 
     # Extra environment variables
     envExtra = ''
