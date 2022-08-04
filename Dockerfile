@@ -7,7 +7,7 @@ FROM debian:stable-slim as base
 ARG USER
 ARG UID
 ARG GID
-ARG NIX_INSTALLER=https://nixos.org/nix/install
+ARG NIX_INSTALLER=https://releases.nixos.org/nix/nix-2.10.3/install
 
 # Set shell and check for pipe fails
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
@@ -100,7 +100,7 @@ RUN mkdir -p /home/${USER}/.vscode-server/extensions && \
 WORKDIR /home/${USER}/.config/devcontainer
 ENV USER=${USER}
 RUN . /home/${USER}/.nix-profile/etc/profile.d/nix.sh && \
-    nix-env --set-flag priority 10 nix-2.8.1 && \
+    nix-env --set-flag priority 10 nix-2.10.3 && \
     "$(nix path-info .#homeConfigurations.${USER}.activationPackage)"/activate
 
 # Copy entrypoint
